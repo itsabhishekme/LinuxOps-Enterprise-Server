@@ -1,0 +1,130 @@
+# ==========================================================
+# LinuxOps Enterprise Server
+# File: configs/cron/backup.cron
+# Description: Scheduled automation for backups, monitoring,
+# cleanup, verification, and reporting.
+#
+# Install:
+# sudo crontab configs/cron/backup.cron
+#
+# View:
+# sudo crontab -l
+#
+# Edit:
+# sudo crontab -e
+# ==========================================================
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# ------------------------------------------------------------------
+# Daily Home Backup
+# Every day at 02:00 AM
+# ------------------------------------------------------------------
+0 2 * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/backup/backup-home.sh >> /opt/LinuxOps-Enterprise-Server/logs/backup.log 2>&1
+
+# ------------------------------------------------------------------
+# Weekly System Backup
+# Every Sunday at 03:00 AM
+# ------------------------------------------------------------------
+0 3 * * 0 /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/backup/backup-system.sh >> /opt/LinuxOps-Enterprise-Server/logs/backup.log 2>&1
+
+# ------------------------------------------------------------------
+# Verify Backups
+# Every day at 03:30 AM
+# ------------------------------------------------------------------
+30 3 * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/backup/verify.sh >> /opt/LinuxOps-Enterprise-Server/logs/backup.log 2>&1
+
+# ------------------------------------------------------------------
+# Cleanup Old Backups
+# Every Sunday at 04:00 AM
+# ------------------------------------------------------------------
+0 4 * * 0 /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/backup/cleanup.sh >> /opt/LinuxOps-Enterprise-Server/logs/backup.log 2>&1
+
+# ------------------------------------------------------------------
+# CPU Monitoring
+# Every 5 Minutes
+# ------------------------------------------------------------------
+*/5 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/cpu.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Memory Monitoring
+# Every 5 Minutes
+# ------------------------------------------------------------------
+*/5 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/ram.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Disk Monitoring
+# Every 10 Minutes
+# ------------------------------------------------------------------
+*/10 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/disk.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Network Monitoring
+# Every 10 Minutes
+# ------------------------------------------------------------------
+*/10 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/network.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Service Health Check
+# Every 15 Minutes
+# ------------------------------------------------------------------
+*/15 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/services.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Complete Monitoring Dashboard
+# Every 30 Minutes
+# ------------------------------------------------------------------
+*/30 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/monitor.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Alert Engine
+# Every 5 Minutes
+# ------------------------------------------------------------------
+*/5 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/monitoring/alerts.sh >> /opt/LinuxOps-Enterprise-Server/logs/monitor.log 2>&1
+
+# ------------------------------------------------------------------
+# Generate System Report
+# Every Day at 06:00 AM
+# ------------------------------------------------------------------
+0 6 * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/reports/system-report.sh >> /opt/LinuxOps-Enterprise-Server/logs/server.log 2>&1
+
+# ------------------------------------------------------------------
+# Local Port Scan
+# Every Day at 07:00 AM
+# ------------------------------------------------------------------
+0 7 * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/scanner/localhost.sh >> /opt/LinuxOps-Enterprise-Server/logs/firewall.log 2>&1
+
+# ------------------------------------------------------------------
+# Firewall Status
+# Every Hour
+# ------------------------------------------------------------------
+0 * * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/firewall/status.sh >> /opt/LinuxOps-Enterprise-Server/logs/firewall.log 2>&1
+
+# ------------------------------------------------------------------
+# Samba User Check
+# Every Day at 08:00 AM
+# ------------------------------------------------------------------
+0 8 * * * /bin/bash /opt/LinuxOps-Enterprise-Server/scripts/samba/users.sh >> /opt/LinuxOps-Enterprise-Server/logs/server.log 2>&1
+
+# ------------------------------------------------------------------
+# Nginx Status Check
+# Every Hour
+# ------------------------------------------------------------------
+15 * * * * systemctl is-active nginx >> /opt/LinuxOps-Enterprise-Server/logs/server.log 2>&1
+
+# ------------------------------------------------------------------
+# Samba Status Check
+# Every Hour
+# ------------------------------------------------------------------
+20 * * * * systemctl is-active smbd >> /opt/LinuxOps-Enterprise-Server/logs/server.log 2>&1
+
+# ------------------------------------------------------------------
+# UFW Firewall Status
+# Every Day at Midnight
+# ------------------------------------------------------------------
+0 0 * * * ufw status verbose > /opt/LinuxOps-Enterprise-Server/reports/security-report.txt 2>&1
+
+# ==========================================================
+# End of LinuxOps Enterprise Server Cron Schedule
+# ==========================================================
