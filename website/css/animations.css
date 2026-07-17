@@ -1,0 +1,502 @@
+/* ==========================================
+   LinuxOps Enterprise Server
+   animations.css
+   ========================================== */
+
+/* ===============================
+   Fade Animations
+================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ===============================
+   Fade Up
+================================ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* ===============================
+   Fade Down
+================================ */
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-down {
+  animation: fadeDown 0.8s ease forwards;
+}
+
+/* ===============================
+   Fade Left
+================================ */
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-left {
+  animation: fadeLeft 0.8s ease forwards;
+}
+
+/* ===============================
+   Fade Right
+================================ */
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-right {
+  animation: fadeRight 0.8s ease forwards;
+}
+
+/* ===============================
+   Zoom In
+================================ */
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+/* ===============================
+   Zoom Out
+================================ */
+
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoom-out {
+  animation: zoomOut 0.8s ease forwards;
+}
+
+/* ===============================
+   Slide Up
+================================ */
+
+@keyframes slideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+/* ===============================
+   Slide Down
+================================ */
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-down {
+  animation: slideDown 1s ease forwards;
+}
+
+/* ===============================
+   Slide Left
+================================ */
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideLeft 1s ease forwards;
+}
+
+/* ===============================
+   Slide Right
+================================ */
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-right {
+  animation: slideRight 1s ease forwards;
+}
+
+/* ===============================
+   Floating Effect
+================================ */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===============================
+   Pulse
+================================ */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ===============================
+   Glow
+================================ */
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #38bdf8;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #38bdf8;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #38bdf8;
+  }
+}
+
+.glow {
+  animation: glow 2s infinite;
+}
+
+/* ===============================
+   Rotate
+================================ */
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 6s linear infinite;
+}
+
+/* ===============================
+   Bounce
+================================ */
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-12px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-6px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* ===============================
+   Shake
+================================ */
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-5px);
+  }
+
+  40% {
+    transform: translateX(5px);
+  }
+
+  60% {
+    transform: translateX(-5px);
+  }
+
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+/* ===============================
+   Blink
+================================ */
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.blink {
+  animation: blink 1.5s infinite;
+}
+
+/* ===============================
+   Progress Bar
+================================ */
+
+@keyframes progressBar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.progress-animation {
+  animation: progressBar 2s ease forwards;
+}
+
+/* ===============================
+   Spinner
+================================ */
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255,255,255,.15);
+  border-top: 5px solid #38bdf8;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+/* ===============================
+   Hover Effects
+================================ */
+
+.hover-grow {
+  transition: transform .3s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift {
+  transition: all .3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.3);
+}
+
+.hover-rotate {
+  transition: .4s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(4deg);
+}
+
+/* ===============================
+   Delays
+================================ */
+
+.delay-1 {
+  animation-delay: .2s;
+}
+
+.delay-2 {
+  animation-delay: .4s;
+}
+
+.delay-3 {
+  animation-delay: .6s;
+}
+
+.delay-4 {
+  animation-delay: .8s;
+}
+
+.delay-5 {
+  animation-delay: 1s;
+}
+
+/* ===============================
+   Duration Helpers
+================================ */
+
+.fast {
+  animation-duration: .5s;
+}
+
+.normal {
+  animation-duration: 1s;
+}
+
+.slow {
+  animation-duration: 2s;
+}
+
+/* ===============================
+   Infinite
+================================ */
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+/* ===============================
+   Smooth Scrolling
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}

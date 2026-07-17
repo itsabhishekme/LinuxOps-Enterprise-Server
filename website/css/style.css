@@ -1,0 +1,663 @@
+/* ==========================================================
+   LinuxOps Enterprise Server
+   Main Stylesheet
+   Author: Abhishek Shrivastava
+   ========================================================== */
+
+:root{
+
+    --primary:#38bdf8;
+    --primary-dark:#0ea5e9;
+    --secondary:#14b8a6;
+
+    --dark:#020617;
+    --dark-light:#0f172a;
+    --card:#1e293b;
+
+    --white:#ffffff;
+
+    --gray:#94a3b8;
+    --gray-light:#cbd5e1;
+
+    --success:#22c55e;
+    --warning:#facc15;
+    --danger:#ef4444;
+
+    --border:#334155;
+
+    --radius:12px;
+
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+
+    --transition:.35s ease;
+}
+
+/* ========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--dark-light);
+    color:var(--white);
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    line-height:1.7;
+}
+
+/* ========================================================== */
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+    transition:var(--transition);
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.container{
+
+    width:min(1200px,92%);
+    margin:auto;
+
+}
+
+/* ========================================================== */
+
+header{
+
+    position:sticky;
+    top:0;
+
+    background:#111827;
+
+    border-bottom:1px solid var(--border);
+
+    z-index:999;
+
+    box-shadow:var(--shadow);
+
+}
+
+.navbar{
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    color:var(--primary);
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:var(--white);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    color:var(--gray-light);
+
+    font-weight:600;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ========================================================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px 0;
+
+    background:
+
+    linear-gradient(
+    rgba(2,6,23,.85),
+    rgba(15,23,42,.90)
+    );
+
+}
+
+.hero h1{
+
+    font-size:64px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:var(--gray-light);
+
+    font-size:20px;
+
+}
+
+.hero-buttons{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ========================================================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 34px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#111827;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:#111827;
+
+}
+
+/* ========================================================== */
+
+section{
+
+    padding:90px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+}
+
+.section-title p{
+
+    margin-top:10px;
+
+    color:var(--gray);
+
+}
+
+/* ========================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+/* ========================================================== */
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+.card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:var(--gray-light);
+
+}
+
+.card ul{
+
+    margin-top:20px;
+
+}
+
+.card li{
+
+    margin-bottom:10px;
+
+    color:var(--gray-light);
+
+}
+
+/* ========================================================== */
+
+.features{
+
+    background:#111827;
+
+}
+
+/* ========================================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.stat-box{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+.stat-box h3{
+
+    color:var(--primary);
+
+    font-size:48px;
+
+}
+
+.stat-box p{
+
+    color:var(--gray);
+
+}
+
+/* ========================================================== */
+
+.terminal{
+
+    background:#000;
+
+    color:#4ade80;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    overflow:auto;
+
+    font-family:
+
+    Consolas,
+    monospace;
+
+    line-height:2;
+
+    border:1px solid #222;
+
+}
+
+.terminal::before{
+
+    content:"● ● ●";
+
+    color:#ef4444;
+
+    display:block;
+
+    margin-bottom:20px;
+
+}
+
+/* ========================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table th{
+
+    background:var(--primary);
+
+    color:#111827;
+
+    padding:15px;
+
+}
+
+table td{
+
+    border:1px solid var(--border);
+
+    padding:15px;
+
+    color:var(--gray-light);
+
+}
+
+/* ========================================================== */
+
+footer{
+
+    background:#020617;
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+footer h2{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    color:var(--gray);
+
+}
+
+/* ========================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    background:var(--primary);
+
+    color:#111827;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+.success{
+
+    color:var(--success);
+
+}
+
+.warning{
+
+    color:var(--warning);
+
+}
+
+.danger{
+
+    color:var(--danger);
+
+}
+
+/* ========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ========================================================== */
+
+@media(max-width:992px){
+
+.hero h1{
+
+    font-size:46px;
+
+}
+
+.section-title h2{
+
+    font-size:34px;
+
+}
+
+}
+
+/* ========================================================== */
+
+@media(max-width:768px){
+
+.nav-links{
+
+    display:none;
+
+}
+
+.hero{
+
+    min-height:80vh;
+
+}
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.card{
+
+    padding:25px;
+
+}
+
+}
+
+/* ========================================================== */
+
+@media(max-width:480px){
+
+.logo{
+
+    font-size:22px;
+
+}
+
+.hero h1{
+
+    font-size:28px;
+
+}
+
+.section-title h2{
+
+    font-size:28px;
+
+}
+
+}
